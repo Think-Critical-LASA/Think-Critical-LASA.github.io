@@ -1,6 +1,32 @@
-h1 {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+body {
+  background-color: #eee;
 }
-.papyrus-text {
-  font-family: "Papyrus", fantasy;
+
+#content {
+  width: 100%;
+  max-width: 650px;
+  margin-inline: auto;
+  font-family: sans-serif;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.byline-date {
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #777;
 }

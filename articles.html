@@ -2,17 +2,27 @@
 
 <html>
 
-  
+
 <head>
-   <title>Think Critical</title> 
-   <link rel="stylesheet" href="style.css">
-   <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+    <title>Think Critical</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
 </head>
 
 
 <body>
-  <zero-md src="test-article.md"></zero-md>
+    <div id="content">Loading...</div>
 
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        fetch('test_article.md') // Replace with your markdown file path
+            .then(response => response.text())
+            .then(markdownText => {
+                document.getElementById('content').innerHTML = marked.parse(markdownText);
+            })
+            .catch(error => {
+                document.getElementById('content').innerText = 'Error loading markdown file.';
+            });
+    </script>
 
 </html>
