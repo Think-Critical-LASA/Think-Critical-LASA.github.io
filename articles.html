@@ -2,17 +2,36 @@
 
 <html>
 
-  
 <head>
-   <title>Think Critical</title> 
-   <link rel="stylesheet" href="style.css">
-   <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+    <title>Think Critical</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
 </head>
 
-
 <body>
-  <zero-md src="test-article.md"></zero-md>
+    <div id="navbar"></div>
+    <div class="content">Loading...</div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        const content = document.querySelector(".content");
 
-</body>
+        fetch("test_article.md")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load article (${response.status})`);
+                }
+                return response.text();
+            })
+            .then(markdownText => {
+                content.innerHTML = marked.parse(markdownText);
+            })
+            .catch(error => {
+                console.error("Error loading article:", error);
+                content.textContent = "Error loading article. Please try again later.";
+            });
+    </script>
+    <div id="footer"></div>
+    <script src="injector.js"></script>
 
 </html>
