@@ -2,27 +2,36 @@
 
 <html>
 
-
 <head>
     <title>Think Critical</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
 </head>
 
-
 <body>
-    <div id="content">Loading...</div>
-
+    <div id="navbar"></div>
+    <div class="content">Loading...</div>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-        fetch('test_article.md') // Replace with your markdown file path
-            .then(response => response.text())
+        const content = document.querySelector(".content");
+
+        fetch("test_article.md")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load article (${response.status})`);
+                }
+                return response.text();
+            })
             .then(markdownText => {
-                document.getElementById('content').innerHTML = marked.parse(markdownText);
+                content.innerHTML = marked.parse(markdownText);
             })
             .catch(error => {
-                document.getElementById('content').innerText = 'Error loading markdown file.';
+                console.error("Error loading article:", error);
+                content.textContent = "Error loading article. Please try again later.";
             });
     </script>
+    <div id="footer"></div>
+    <script src="injector.js"></script>
 
 </html>
