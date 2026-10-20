@@ -87,7 +87,7 @@ h2 {
 .namecard {
   filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.5));
   background-color:white;
-  max-width:250px;
+  width:262px;
   padding:1rem;
   border-radius:1rem;
   margin:1rem;
