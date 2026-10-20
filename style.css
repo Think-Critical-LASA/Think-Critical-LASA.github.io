@@ -58,6 +58,10 @@ body {
   height:2rem;
   border-radius:1rem;
 }
+#navbar a {
+  display:flex;
+  align-items:center;
+}
 #navbar a:link,
 #navbar a:visited {
   display: block;
