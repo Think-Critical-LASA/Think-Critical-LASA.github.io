@@ -1,6 +1,6 @@
 :root {
   --color-primary:#48A860;
-  --color-secondary:color-mix(in oklab,var(--color-primary) 80%,black 20%)
+  --color-secondary:color-mix(in oklab,var(--color-primary) 50%,black 50%)
 }
 html,
 body {
