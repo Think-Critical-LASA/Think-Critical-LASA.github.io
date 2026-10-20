@@ -27,9 +27,6 @@ body {
 }
 
 #navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: var(--color-secondary);
   padding: 1rem;
   position: sticky;
@@ -40,6 +37,9 @@ body {
 
 #navbar nav {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #navbar ul {
