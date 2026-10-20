@@ -52,8 +52,11 @@ body {
   padding: 0;
 }
 #navbar img {
+  margin:0;
+  padding:0;
   width:2rem;
   height:2rem;
+  border-radius:1rem;
 }
 #navbar a:link,
 #navbar a:visited {
