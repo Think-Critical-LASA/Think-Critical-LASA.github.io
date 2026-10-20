@@ -76,7 +76,7 @@ h2 {
 }
 #namecards {
   display:flex;
-  max-width: 600px;
+  max-width: 700px;
   flex-wrap:wrap;
 }
 .namecard {
