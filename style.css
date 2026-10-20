@@ -28,6 +28,7 @@ body {
 
 #navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--color-secondary);
   padding: 1rem;
@@ -43,7 +44,6 @@ body {
 
 #navbar ul {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
@@ -51,7 +51,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
+#navbar img {
+  width:2rem;
+  height:2rem;
+}
 #navbar a:link,
 #navbar a:visited {
   display: block;
