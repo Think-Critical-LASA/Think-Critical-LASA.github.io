@@ -75,7 +75,8 @@ h2 {
   color: #777;
 }
 
-
 .namecard {
   filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.5));
+  background-color:white;
+  max-width:250px;
 }
