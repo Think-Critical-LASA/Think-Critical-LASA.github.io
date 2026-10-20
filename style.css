@@ -61,7 +61,7 @@ body {
 #navbar a:link,
 #navbar a:visited {
   display: block;
-  padding: 0.5rem;
+  padding: 0;
   text-decoration: none;
   color: #fff;
 }
