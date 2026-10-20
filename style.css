@@ -74,7 +74,11 @@ h2 {
 .byline-date {
   color: #777;
 }
-
+#namecards {
+  display:flex;
+  max-width: 600px;
+  
+}
 .namecard {
   filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.5));
   background-color:white;
