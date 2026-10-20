@@ -77,7 +77,7 @@ h2 {
 #namecards {
   display:flex;
   max-width: 600px;
-  
+  flex-wrap:wrap;
 }
 .namecard {
   filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.5));
@@ -85,6 +85,7 @@ h2 {
   max-width:250px;
   padding:1rem;
   border-radius:1rem;
+  margin:1rem;
 }
 .namecard img {
   border-radius:1rem;
