@@ -1,7 +1,8 @@
 :root {
-  --color-primary:#48A860;
-  --color-secondary:color-mix(in oklab,var(--color-primary) 50%,black 50%)
+  --color-primary: #48A860;
+  --color-secondary: color-mix(in oklab, var(--color-primary) 50%, black 50%)
 }
+
 html,
 body {
   width: 100%;
@@ -11,7 +12,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: color-mix(in oklab, var(--color-primary) 30%,white 70%);
+  background-color: color-mix(in oklab, var(--color-primary) 30%, white 70%);
   font-family: "IBM Plex Serif", serif;
 }
 
@@ -51,17 +52,20 @@ body {
   margin: 0;
   padding: 0;
 }
+
 #navbar img {
-  margin:0;
-  padding:0;
-  width:2rem;
-  height:2rem;
-  border-radius:1rem;
+  margin: 0;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
 }
+
 #navbar a {
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
 }
+
 #navbar a:link,
 #navbar a:visited {
   display: block;
@@ -88,22 +92,27 @@ h2 {
 .byline-date {
   color: #777;
 }
+
 #namecards {
-  display:flex;
+  display: flex;
   max-width: 700px;
-  flex-wrap:wrap;
-  justify-content:space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
+
 .namecard {
-  filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.5));
-  background-color:white;
-  width:262px;
-  padding:1rem;
-  border-radius:1rem;
-  margin:1rem;
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
+  background-color: white;
+  width: 262px;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
 }
+
 .namecard img {
-  border-radius:1rem;
-  width:262px;
-  height:200px;
+  border-radius: 1rem;
+  width: 262px;
+  height: 200px;
 }
