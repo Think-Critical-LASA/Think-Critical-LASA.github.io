@@ -22,7 +22,6 @@ body {
   margin-inline: auto;
   overflow-y: auto;
   background-color: #fff;
-  box-sizing: border-box;
   padding: 1.5rem;
   flex: 1;
 }
