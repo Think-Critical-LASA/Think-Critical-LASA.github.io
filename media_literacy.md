@@ -1,4 +1,5 @@
-# Headline or Smth!
+# Media Literacy?
+## The Importance of Media Literacy
 
 1. 59% of adults worldwide lack basic media literacy skills.
 
