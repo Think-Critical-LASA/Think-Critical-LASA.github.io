@@ -3,10 +3,16 @@
   --color-secondary: color-mix(in oklab, var(--color-primary) 50%, black 50%)
 }
 
-html,
+html {
+  scrollbar-color: color-mix(in oklab, var(--color-primary) 70%, white 30%) white;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary); /* Darker color on hover */
+}
 body {
   width: 100%;
   overflow-x: hidden;
+  overflow-y:hidden;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -24,6 +30,7 @@ body {
   background-color: #fff;
   padding: 1.5rem;
   flex: 1;
+  overflow-y:auto;
 }
 
 #navbar {
