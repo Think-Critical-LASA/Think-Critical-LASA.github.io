@@ -1,6 +1,3 @@
-# Media Literacy..?
-## The Importance of Media Literacy ;/
-
 ### 1. 59% of adults worldwide lack basic media literacy skills.
 
  What does that mean? What is media literacy? How is it different from just… normal literacy?

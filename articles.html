@@ -3,13 +3,15 @@
 
 <head lang='en'>
     <meta charset="UTF-8">
-    <title>Think Critical</title>
+    <title>Articles | Think Critical</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -17,22 +19,63 @@
     <div class="content">Loading...</div>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
+        function loadArticle(key, value) {
+            const url = new URL(window.location.href);
+            url.searchParams.set(key, value);
+            window.location.href = url.toString();
+        };
+        const queryString = window.location.search;
         const content = document.querySelector(".content");
-
-        fetch("media_literacy.md")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to load article (${response.status})`);
-                }
-                return response.text();
-            })
-            .then(markdownText => {
-                content.innerHTML = marked.parse(markdownText);
-            })
-            .catch(error => {
-                console.error("Error loading article:", error);
-                content.textContent = "Error loading article. Please try again later.";
-            });
+        const urlParams = new URLSearchParams(queryString);
+        const slug = urlParams.get("article");
+        if (slug) {
+            fetch('manifest.json')
+                .then(response => response.json())
+                .then(manifest => {
+                    const item = manifest.find(path => path.slug === slug);
+                    const path = item.path;
+                    fetch(path)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Failed to load article (${response.status})`);
+                            }
+                            return response.text();
+                        })
+                        .then(markdownText => {
+                            var header = `<h1>${item.title}</h1>
+                            <h2>${item.subtitle}</h2>
+                            <p>${item.author}</p>
+                            <p>${item.date}</p>
+                            <hr>`;
+                            content.innerHTML = `${header}
+                            ${marked.parse(markdownText)}`;
+                        })
+                        .catch(error => {
+                            console.error("Error loading article:", error);
+                            content.textContent = "Error loading article. Please try again later.";
+                        });
+                })
+        } else {
+            fetch('manifest.json')
+                .then(response => response.json())
+                .then(manifest => {
+                    manifest.forEach(item => {
+                        content.innerHTML = `
+                        <div class="article-card"">
+                            <img src="${item.imgpath}" alt="${item.imgalt}">
+                            <div class="thetextbit">
+                                <h3><a href="#" onclick="loadArticle('article', '${item.slug}'); return false;">${item.title}</a></h3>
+                                <p class="summary">${item.summary}</p>
+                                <div class="byline">
+                                    <p>By <strong>${item.author}</strong></p>
+                                    <p>${item.date}</p>
+                                </div>
+                            </div>
+                        </div>`;
+                    });
+                })
+                .catch(error => console.error('Error loading JSON:', error));
+        }
     </script>
     <div id="footer"></div>
     <script src="injector.js"></script>

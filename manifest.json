@@ -1,0 +1,14 @@
+[
+    {
+        "slug": "media-literacy",
+        "title": "Media Literacy!",
+        "subtitle": "The Importance of Media Literacy",
+        "summary": "59% of adults worldwide lack basic media literacy skills. What does that mean for us?",
+        "author": "Abby Yu",
+        "date": "10-23-2026",
+        "tags": [],
+        "path": "content/media-literacy.md",
+        "imgpath": "https://picsum.photos/1600/900",
+        "imgalt": "this is random lorem picsum"
+    }
+]
