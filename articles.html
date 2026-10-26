@@ -44,8 +44,8 @@
                         .then(markdownText => {
                             var header = `<h1>${item.title}</h1>
                             <h2>${item.subtitle}</h2>
-                            <p>${item.author}</p>
-                            <p>${item.date}</p>
+                            <p>By <strong>${item.author}</strong></p>
+                            <p style="color:#888; margin:0;">${item.date}</p>
                             <hr>`;
                             content.innerHTML = `${header}
                             ${marked.parse(markdownText)}`;
