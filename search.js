@@ -14,5 +14,7 @@ class wordEngine(user_input){
     //
 }
 
+class wordEngine("very ha'p/py n!o w/Hat !not hAppY y!es ha/ppy? ");
+
 
 
