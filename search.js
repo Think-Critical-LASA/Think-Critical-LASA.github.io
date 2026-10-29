@@ -12,6 +12,10 @@ class wordEngine(user_input){
     }
 
     //😂
+
+    for 😂 in range(5){
+    console.log("hi");
+        
 }
 
 class wordEngine("very ha'p/py n!o w/Hat !not hAppY y!es ha/ppy? ");
