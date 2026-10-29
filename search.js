@@ -15,6 +15,7 @@ class wordEngine(user_input){
 
     for 😂 in range(5){
         console.log("hi");
+    }
         
 }
 
