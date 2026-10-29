@@ -11,8 +11,6 @@ class wordEngine(user_input){
       console.log(letter);
     }
 
-    //😂
-
     for 😂 in range(5){
         console.log("hi");
     }
